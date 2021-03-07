@@ -14,8 +14,10 @@
     <aura:attribute name="firstNameP" type="String"/>
     <aura:attribute name="lastNameP" type="String"/>
 <!-- Handle the Events Start-->
-    <aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
+    <!--<aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
+        
     <aura:handler name="childToParent" event="c:LtngTipsAndTricksCmpEvent" action="{!c.handleCmpEvent}"/>
+    -->
 <!-- Handle the Events End-->
     <lightning:card  title="{!v.parentTitle}">
 

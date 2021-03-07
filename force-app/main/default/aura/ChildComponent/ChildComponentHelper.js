@@ -1,6 +1,6 @@
 ({
     fireComponentEvent : function(component ,event , helper) {
-        debugger;
+        //debugger;
         let fName = component.find("firstName").get("v.value");
         let lName = component.find("lastName").get("v.value");
         let payloadData = {
@@ -17,6 +17,6 @@
             jsonPayload : payloadDataString
         });
         cmpRegisterName.fire();
-        debugger;
+        //debugger;
     }
 })
