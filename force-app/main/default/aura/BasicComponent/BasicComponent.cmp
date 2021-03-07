@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Parag
+  @group             : 
+  @last modified on  : 07-03-2021
+  @last modified by  : Parag
+  Modifications Log 
+  Ver   Date         Author   Modification
+  1.0   07-03-2021   Parag   Initial Version
+-->
+<aura:component implements="froce:appHostable">
+
+    <aura:attribute name="FirstName" type="String" description="This is FirstName" />
+    <aura:attribute name="LastName" type="String" description="This is LastName" />
+
+    <div class="slds-card">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="6" padding="around-small">
+                <lightning:input name="FirstName" label="First Name" value="{v.FirstName}" placeholder="type here..." />
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" padding="around-small">
+                <lightning:input name="LastName" label="Last Name" value="{v.LastName}" placeholder="type here..." />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+</aura:component>
