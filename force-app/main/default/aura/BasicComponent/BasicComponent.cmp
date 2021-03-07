@@ -8,20 +8,32 @@
   Ver   Date         Author   Modification
   1.0   07-03-2021   Parag   Initial Version
 -->
-<aura:component implements="froce:appHostable">
 
-    <aura:attribute name="FirstName" type="String" description="This is FirstName" />
-    <aura:attribute name="LastName" type="String" description="This is LastName" />
+<aura:component implements="force:appHostable">
+
+    <aura:attribute name="FirstName" type="String" default="" description="This is FirstName" />
+    <aura:attribute name="LastName" type="String" default=""  description="This is LastName" />
+    <aura:attribute name="FullName" type="String" default=""  description="This is FullName" />
 
     <div class="slds-card">
         <lightning:layout multipleRows="true">
             <lightning:layoutItem size="6" padding="around-small">
-                <lightning:input name="FirstName" label="First Name" value="{v.FirstName}" placeholder="type here..." />
+                <lightning:input name="FirstName" label="First Name" value="{!v.FirstName}" placeholder="type here..." />
             </lightning:layoutItem>
             <lightning:layoutItem size="6" padding="around-small">
-                <lightning:input name="LastName" label="Last Name" value="{v.LastName}" placeholder="type here..." />
+                <lightning:input name="LastName" label="Last Name" value="{!v.LastName}" placeholder="type here..." />
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" padding="around-small">
+                <lightning:button label="Search" variant="brand" class="slds-align_absolute-center" 
+                onclick="{!c.getFullName}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" padding="around-small">
+                <lightning:button label="Updatable Search" variant="brand" class="slds-align_absolute-center" 
+                onclick="{!c.getpdatableFullName}"/>
             </lightning:layoutItem>
         </lightning:layout>
     </div>
+
+    Full Name: {!v.FullName}
 
 </aura:component>

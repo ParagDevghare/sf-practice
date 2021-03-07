@@ -1,3 +1,30 @@
+<!--
+  @description       : 
+  @author            : Parag
+  @group             : 
+  @last modified on  : 07-03-2021
+  @last modified by  : Parag
+  Modifications Log 
+  Ver   Date         Author   Modification
+  1.0   07-03-2021   Parag   Initial Version
+-->
 <aura:component>
+    <aura:attribute name="firstName" type="String"/>
+    <aura:attribute name="lastName" type="String"/>
+    <aura:attribute name="isUpdate" type="Boolean"/>
+    <aura:registerEvent name="childToParent" type="c:LtngTipsAndTricksCmpEvent"/>
+    <aura:method name="saveSucess" action="{!c.cancelNameFields}"/>
 
+    <aura:if isTrue="{!v.isUpdate}">
+      <lightning:input type="text" label="First Name" value="{#v.firstName}" aura:id="firstName"/>
+      <lightning:input type="text" label="Last Name" value="{#v.lastName}" aura:id="lastName"/>
+      <lightning:button label="Save" onclick="{!c.saveNameFields}" variant="brand"/>
+      <lightning:button label="Cancel" onclick="{!c.cancelNameFields}" variant="destructive"/>
+    <aura:set attribute="else">
+        The full name of the person you are looking for {!v.firstName} {!v.lastName}
+        <br/>
+        <lightning:button label="Update" onclick="{!c.UpdateNameFields}" variant="brand"/>
+    </aura:set>
+    </aura:if>
+    
 </aura:component>	
