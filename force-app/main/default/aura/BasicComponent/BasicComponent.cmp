@@ -2,18 +2,21 @@
   @description       : 
   @author            : Parag
   @group             : 
-  @last modified on  : 07-03-2021
+  @last modified on  : 09-03-2021
   @last modified by  : Parag
   Modifications Log 
   Ver   Date         Author   Modification
   1.0   07-03-2021   Parag   Initial Version
 -->
 
-<aura:component implements="force:appHostable">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
 
     <aura:attribute name="FirstName" type="String" default="" description="This is FirstName" />
     <aura:attribute name="LastName" type="String" default=""  description="This is LastName" />
     <aura:attribute name="FullName" type="String" default=""  description="This is FullName" />
+
+    <!-- Event Register start-->
+    <aura:registerEvent name="appEvent" type="c:LtngTipsAndTricksAppEvent"/>
 
     <div class="slds-card">
         <lightning:layout multipleRows="true">

@@ -2,7 +2,7 @@
   @description       : 
   @author            : Parag
   @group             : 
-  @last modified on  : 08-03-2021
+  @last modified on  : 09-03-2021
   @last modified by  : Parag
   Modifications Log 
   Ver   Date         Author   Modification
@@ -13,13 +13,12 @@
     <aura:attribute name="isDisplayActions" type="Boolean" default="false" />
     <aura:attribute name="firstNameP" type="String" />
     <aura:attribute name="lastNameP" type="String" />
+    
     <!-- Handle the Events Start-->
-    <!--
-        <aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
-        -->
-    <aura:handler name="childToParent" event="c:LtngTipsAndTricksCmpEvt" action="{!c.handleCmpEvent}" />
-
+    <aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
+    <aura:handler name="childToParent" event="c:LtngTipsAndTricksCmpEvent" action="{!c.handleCmpEvent}"/>
     <!-- Handle the Events End-->
+
     <lightning:card title="{!v.parentTitle}">
 
         <aura:set attribute="actions">
