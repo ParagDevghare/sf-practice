@@ -1,0 +1,13 @@
+<!--
+  @description       : 
+  @author            : Parag
+  @group             : 
+  @last modified on  : 09-03-2021
+  @last modified by  : Parag
+  Modifications Log 
+  Ver   Date         Author   Modification
+  1.0   09-03-2021   Parag   Initial Version
+-->
+<aura:component implements="c:FlowAttributes">
+    {!v.sObjectName}
+</aura:component>	
