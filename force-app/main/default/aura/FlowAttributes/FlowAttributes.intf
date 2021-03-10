@@ -1,6 +1,0 @@
-<aura:interface description="Interface template">
-  <aura:attribute name="actionName" type="String" default=""/>
-  <aura:attribute name="sObjectName" type="String" default=""/>
-  <aura:attribute name="sObjectId" type="String" default=""/>
-  <aura:attribute name="componentList" type="String" default=""/>
-</aura:interface>
