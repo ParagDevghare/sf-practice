@@ -1,7 +1,7 @@
 ({
     doInitHandler : function(component, event, helper) {
         const startIndex = component.get("v.startIndex");
-        const componentName = "c:"+component.get("v.componentList")[startIndex];
+        const componentName = "c:"+component.get("v.componentList")[0];
         alert("componentName : "+componentName);
         let params = this.setParams(component, event, helper);
         $A.createComponent(componentName ,params , function(newComponent , status , errorMessage){

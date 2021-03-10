@@ -1,5 +1,8 @@
 ({
-    myAction : function(component, event, helper) {
-
-    }
+    loadNextComponent : function(component, event, helper) {
+        
+    },
+    cancelAction : function(component, event, helper) {
+        
+    },
 })
