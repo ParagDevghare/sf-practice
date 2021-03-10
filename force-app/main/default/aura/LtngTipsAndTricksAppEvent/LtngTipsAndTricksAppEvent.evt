@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="This event will be using inside app biulder tips and tricks page">
+    <aura:attribute name="firstName" type="String"/>
+    <aura:attribute name="lastName" type="String"/>
+</aura:event>

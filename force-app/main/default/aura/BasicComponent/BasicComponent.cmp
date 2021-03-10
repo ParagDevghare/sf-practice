@@ -2,38 +2,46 @@
   @description       : 
   @author            : Parag
   @group             : 
-  @last modified on  : 07-03-2021
+  @last modified on  : 09-03-2021
   @last modified by  : Parag
   Modifications Log 
   Ver   Date         Author   Modification
   1.0   07-03-2021   Parag   Initial Version
 -->
 
-<aura:component implements="force:appHostable">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
 
-    <aura:attribute name="FirstName" type="String" default="" description="This is FirstName" />
-    <aura:attribute name="LastName" type="String" default=""  description="This is LastName" />
-    <aura:attribute name="FullName" type="String" default=""  description="This is FullName" />
+<!-- Variables are called attributes in .cmp
+        String , Integer , Object , Array , Boolean , Date , DateTime , Object[] , sobject , sbject[] , List, Cooleactions
+        String FirstName ='';
+-->
 
-    <div class="slds-card">
+<aura:attribute name="FirstName" type="String"  default="" description="This is the First Name of the Contact to look records" />
+<aura:attribute name="LastName" type="String" default="" description="This the last name of the contact to look records"/>
+<aura:attribute name="FullName" type="String" default=""/>
+
+<!-- Event Register start-->
+<aura:registerEvent name="appEvent" type="c:LtngTipsAndTricksAppEvent"/>
+<!-- Event register End-->
+<div class="slds-card">
+        <!-- Header Search Layout for Fields START-->
         <lightning:layout multipleRows="true">
-            <lightning:layoutItem size="6" padding="around-small">
-                <lightning:input name="FirstName" label="First Name" value="{!v.FirstName}" placeholder="type here..." />
-            </lightning:layoutItem>
-            <lightning:layoutItem size="6" padding="around-small">
-                <lightning:input name="LastName" label="Last Name" value="{!v.LastName}" placeholder="type here..." />
-            </lightning:layoutItem>
-            <lightning:layoutItem size="6" padding="around-small">
-                <lightning:button label="Search" variant="brand" class="slds-align_absolute-center" 
-                onclick="{!c.getFullName}"/>
-            </lightning:layoutItem>
-            <lightning:layoutItem size="6" padding="around-small">
-                <lightning:button label="Updatable Search" variant="brand" class="slds-align_absolute-center" 
-                onclick="{!c.getpdatableFullName}"/>
-            </lightning:layoutItem>
-        </lightning:layout>
-    </div>
+        <lightning:layoutItem size="6" padding="around-small">
+            <lightning:input name="FirstName" label="First Name" placeholder="type here..." value="{!v.FirstName}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" padding="around-small">
+            <lightning:input name="LastName" label="Last Name" placeholder="type here..." value="{!v.LastName}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" padding="around-small">
+            <div class="slds-align_absolute-center">
+            <lightning:button name="LastName" variant="brand" label="Pass By Value"  onclick="{!c.getFullName}"/>
+            <lightning:button name="LastName" variant="brand" label="Pass By Referrence"  onclick="{!c.getUpdatableFullName}"/>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+        <!-- Header Search Layout for Fields END-->
 
-    Full Name: {!v.FullName}
-
+        <!-- Data Search Details -->
+        The Data you are Look for {!v.FullName}
+</div>
 </aura:component>

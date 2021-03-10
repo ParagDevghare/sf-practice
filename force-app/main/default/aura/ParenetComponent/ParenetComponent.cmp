@@ -2,7 +2,7 @@
   @description       : 
   @author            : Parag
   @group             : 
-  @last modified on  : 07-03-2021
+  @last modified on  : 09-03-2021
   @last modified by  : Parag
   Modifications Log 
   Ver   Date         Author   Modification
@@ -11,15 +11,15 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
     <aura:attribute name="parentTitle" type="String" default="Parent Component" />
     <aura:attribute name="isDisplayActions" type="Boolean" default="false" />
-    <aura:attribute name="firstNameP" type="String"/>
-    <aura:attribute name="lastNameP" type="String"/>
-<!-- Handle the Events Start-->
-    <!--<aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
-        
-    <aura:handler name="childToParent" event="c:LtngTipsAndTricksCmpEvent" action="{!c.handleCmpEvent}"/>
-    -->
-<!-- Handle the Events End-->
-    <lightning:card  title="{!v.parentTitle}">
+    <aura:attribute name="firstNameP" type="String" />
+    <aura:attribute name="lastNameP" type="String" />
+    
+    <!-- Handle the Events Start-->
+    <aura:handler event="c:LtngTipsAndTricksAppEvent" action="{!c.handleAppEvent}"/>
+    <aura:handler name="childToParent" event="c:LtngTipsAndTricksCmpEvt" action="{!c.handleCmpEvent}"/>
+    <!-- Handle the Events End-->
+
+    <lightning:card title="{!v.parentTitle}">
 
         <aura:set attribute="actions">
             <aura:if isTrue="{!v.isDisplayActions}">
@@ -28,7 +28,7 @@
         </aura:set>
 
         <p class="slds-p-horizontal_small">
-            <c:ChildComponent firstName="{!v.firstNameP}" lastName="{!v.lastNameP}" aura:id="childcmpauraId"/>
+            <c:ChildComponent firstName="{!v.firstNameP}" lastName="{!v.lastNameP}" aura:id="childcmpauraId" />
         </p>
     </lightning:card>
 </aura:component>

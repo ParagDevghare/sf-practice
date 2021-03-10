@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : Parag
+  @group             : 
+  @last modified on  : 09-03-2021
+  @last modified by  : Parag
+  Modifications Log 
+  Ver   Date         Author   Modification
+  1.0   09-03-2021   Parag   Initial Version
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <!-- controller="AccountLtngController">-->
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="accounts" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+   <div class="slds-card">
+       <aura:if isTrue="{!v.isLoading}">
+        <lightning:spinner alternativeText="Loading" size="medium" />
+        </aura:if>
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="10" padding="around-small">
+            <lightning:input aura:id="accountName" value="" placeholder="Search for accounts based on its name"/>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem size="2" padding="around-small">
+            <lightning:button  label="Search" variant="brand" onclick="{!c.getAccountsctr}"/>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" padding="around-small">
+            <lightning:button  label="Get Total Selected Records" variant="brand" onclick="{!c.getTotalNoOfRecordsSelected}"/>
+            <lightning:datatable
+                keyField="id"
+                data="{! v.accounts }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="false"
+                onrowselection="{!c.selectedAccounts}"
+                aura:id="accountTable"/>
+        </lightning:layoutItem>
+     </lightning:layout>
+   </div>
+</aura:component>	
