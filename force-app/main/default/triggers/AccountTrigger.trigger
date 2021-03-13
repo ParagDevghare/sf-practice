@@ -1,13 +1,3 @@
-/**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-28-2021
- * @last modified by  : Parag
- * Modifications Log 
- * Ver   Date         Author                               Modification
- * 1.0   02-07-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
-**/
 trigger AccountTrigger on Account (before insert , after insert , after update , after delete , after undelete , before update , before delete) {
 
     /**

@@ -1,42 +1,33 @@
-/**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 02-18-2021
- * @last modified by  : Parag
- * Modifications Log 
- * Ver   Date         Author                               Modification
- * 1.0   02-07-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
-**/
+
 public with sharing class AccountTrigger {
     
    public Static Boolean isExecute = true;
    
-    public static void beforeInsert(List<Account> newAccounts){
-        /*
-         * Given : When User Creates a New Account from Account Tab
-         * When :  Type = Prospects and Rating = Hot and click Save
-         * Then : Chcek Phone and Website is provided else throw an error saying Phone and website required
-         */
-        for(Account record : newAccounts){
-            Boolean isError = false;
-                if(record.Type == 'Prospect' && record.Rating == 'Hot'){
-                    if(record.Phone == null){
-                        isError = true;
-                        record.Phone.addError('Phone is Required');
-                    }
-                    if(record.Website == null){
-                        isError = true;
-                        record.Website.addError('Website is required');
-                    }
+   public static void beforeInsert(List<Account> newAccounts){
+    /*
+     * Given : When User Creates a New Account from Account Tab
+     * When :  Type = Prospects and Rating = Hot and click Save
+     * Then : Chcek Phone and Website is provided else throw an error saying Phone and website required
+     */
+    for(Account record : newAccounts){
+        Boolean isError = false;
+            if(record.Type == 'Prospect' && record.Rating == 'Hot'){
+                if(record.Phone == null){
+                    isError = true;
+                    record.Phone.addError('Phone is Required');
                 }
-                if(isError ){
-                    record.addError('Account Trigger validation error');
+                if(record.Website == null){
+                    isError = true;
+                    record.Website.addError('Website is required');
                 }
-                // Overriding the Current record Value in Before Insert Trigger event
-                record.Description = 'Account Name : '+record.Name+'\n Phone : '+record.Phone +'\n Website : '+record.Website;
-        }
-         
+            }
+            if(isError ){
+                record.addError('Account Trigger validation error');
+            }
+            // Overriding the Current record Value in Before Insert Trigger event
+            record.Description = 'Account Name : '+record.Name+'\n Phone : '+record.Phone +'\n Website : '+record.Website;
+    }
+     
     }
 
     public static void afterInsertOld(Map<Id,Account> newAccountMap){
