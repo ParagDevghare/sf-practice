@@ -1,8 +1,7 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="FlexipageDemo">
-    
     <aura:attribute name="firstName1" type="String" />
     <aura:attribute name="lastName1" type="String" />
-<div class="slds-card">
+    <div class="slds-card">
         
         <lightning:input label="Enter First Name" value="{!v.firstName1}" />
         <lightning:input label="Enter Last Name" value="{!v.lastName1}" />
