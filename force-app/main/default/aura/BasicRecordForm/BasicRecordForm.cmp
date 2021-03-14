@@ -1,10 +1,11 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
 
     <lightning:recordForm
-    recordId="001XXXXXXXXXXXXXXX"
+    recordId="0012w00000ayC50AAE"
     objectApiName="Account"
     layoutType="Full"
-    mode="view" />
+    mode="view" 
+    columns="2" />
 
 </aura:component>	
 
