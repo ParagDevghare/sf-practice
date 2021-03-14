@@ -4,7 +4,7 @@
     recordId="0012w00000ayC50AAE"
     objectApiName="Account"
     layoutType="Full"
-    mode="view" 
+    mode="edit" 
     columns="2" />
 
 </aura:component>	
