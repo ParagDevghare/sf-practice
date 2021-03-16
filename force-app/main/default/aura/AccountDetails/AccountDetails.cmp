@@ -1,15 +1,5 @@
-<!--
-  @description       : 
-  @author            : Parag
-  @group             : 
-  @last modified on  : 09-03-2021
-  @last modified by  : Parag
-  Modifications Log 
-  Ver   Date         Author   Modification
-  1.0   09-03-2021   Parag   Initial Version
--->
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
-    <!-- controller="AccountLtngController">-->
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="AccountLtngController">
     <aura:attribute name="isLoading" type="Boolean" default="false"/>
     <aura:attribute name="accounts" type="List"/>
     <aura:attribute name="columns" type="List"/>

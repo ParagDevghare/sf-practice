@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" controller="FlexipageDemo">
+    <aura:attribute name="firstName1" type="String" />
+    <aura:attribute name="lastName1" type="String" />
+    <div class="slds-card">
+        {!v.recordId}
+        <lightning:input label="Enter First Name" value="{!v.firstName1}" />
+        <lightning:input label="Enter Last Name" value="{!v.lastName1}" />
+        <lightning:button label="Add contact" onclick="{!c.addContact}" />
+    </div>
+
+    <aura:attribute name="fields" type="String[]" default="['Name','Phone','Type', 'Rating']" />
+    recordId: {!v.recordId}
+    <lightning:recordForm
+        aura:id="myRecordForm"
+        recordId="{!v.recordId}"
+        objectApiName="Account"
+        fields="{!v.fields}"
+        columns="2"
+        mode="edit"
+        onsubmit="{!c.handleSubmit}" />
+
+</aura:component>
