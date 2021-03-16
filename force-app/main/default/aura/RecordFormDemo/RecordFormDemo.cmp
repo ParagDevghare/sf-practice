@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
     <aura:attribute name="fields" type="String[]" default="['Phone','Account_Type__c','Title']" />
     <lightning:recordForm
         aura:id="myRecordForm"
