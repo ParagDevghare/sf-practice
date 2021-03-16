@@ -1,14 +1,16 @@
 
 <aura:component implements="force:lightningQuickAction,lightning:actionOverride">
-
-    <lightning:card  title="Create Account">
+        
+    <p class="slds-p-horizontal_small">
+        <c:CreationFlow sObjectName="Account" componentList="['Account', 'Contact', 'Opportunity']" />
+    </p>
+    <!-- <lightning:card  title="Create Account">
+        
         <aura:set attribute="footer">
-            <lightning:button label="Next" />
-            <lightning:button label="Cancel" />
-        </aura:set>
-        <p class="slds-p-horizontal_small">
-            <c:CreationFlow sObjectName="Account" componentList="['Account', 'Contact', 'Opportunity']" />
-        </p>
-    </lightning:card>
+            <lightning:button label="Next" onclick="{!c.loadNextComponent}" variant="brand" />
+            <lightning:button label="Cancel" onclick="{!c.cancelAction}" variant="destructive" />
+        </aura:set>        
+
+    </lightning:card> -->
 
 </aura:component>	
