@@ -16,17 +16,11 @@
             if (state === "SUCCESS") {
                 alert('Contact inserted successfully');
             }
-            else {
+            else{
                 let error = response.getError();
-                alert("ERROR :" + JSON.stringify(error));
+                alert("ERROR :"+JSON.stringify(error));
             }
         });
         $A.enqueueAction(action);
-    },
-    handleSubmit: function (cmp, event, helper) {
-        event.preventDefault();       // stop the form from submitting
-        const fields = event.getParam('fields');
-        fields.LastName = 'My Custom Last Name'; // modify a field
-        cmp.find('myRecordForm').submit(fields);
     }
 })
