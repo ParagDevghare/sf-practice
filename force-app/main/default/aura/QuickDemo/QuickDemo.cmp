@@ -10,4 +10,4 @@
 -->
 <aura:component implements="force:lightningQuickAction">
     <h1>This is a Lightning component </h1>
-</aura:component>	
+</aura:component>

@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable">
+    
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="myIcon" type="String" />
+    <lightning:input type="text" value="{!v.title}" placeholder="Enter here title for the card." />
+    <br/>
+    <lightning:input type="text" value="{!v.myIcon}" label="Enter here Icon for the card." />
+    <br/>
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="{!v.myIcon}" size="small"/>
+        	{! v.title }
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:badge label="Tag1"/>
+            <lightning:badge label="Tag2"/>
+            <lightning:badge label="Tag3"/>
+        </aura:set>
+        This is Card Body (custom component)
+    </lightning:card>
+    
+</aura:component>

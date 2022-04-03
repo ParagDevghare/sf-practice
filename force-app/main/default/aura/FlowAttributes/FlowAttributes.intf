@@ -1,9 +1,7 @@
 <aura:interface description="Interface template">
-    <aura:attribute name="sObjectName" type="String" default="" />
-    <aura:attribute name="sObjectId" type="String" default="" />
-    <aura:attribute name="componentList" type="List" default="" />
-    <aura:attribute name="currentPageIndex" type="Integer" default="" />
-    <aura:attribute name="startIndex" type="Integer" default="0" />
-    <aura:attribute name="actionName" type="String" default="" />
-  </aura:interface>
-
+  <aura:attribute name="actionName" type="String" default=""/>
+  <aura:attribute name="sObjectName" type="String" default=""/>
+  <aura:attribute name="sObjectId" type="String" default=""/>
+  <aura:attribute name="componentList" type="String" default=""/>
+  
+</aura:interface>

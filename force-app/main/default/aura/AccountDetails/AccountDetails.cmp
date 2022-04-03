@@ -1,4 +1,3 @@
-
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="AccountLtngController">
     <aura:attribute name="isLoading" type="Boolean" default="false"/>
     <aura:attribute name="accounts" type="List"/>
@@ -28,4 +27,4 @@
         </lightning:layoutItem>
      </lightning:layout>
    </div>
-</aura:component>	
+</aura:component>

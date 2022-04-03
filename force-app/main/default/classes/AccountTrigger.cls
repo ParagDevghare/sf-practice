@@ -1,4 +1,3 @@
-
 public with sharing class AccountTrigger {
     
    public Static Boolean isExecute = true;
@@ -77,7 +76,7 @@ public with sharing class AccountTrigger {
         }
 
         if(newContactmap.values().size() > 0){
-            Insert newContactmap.values();
+            newContactmap = perfomDMlContacts(newContactmap);
             List<Account> accList = new List<Account>();
             for(Id key : newContactmap.keyset()){
                 Account acc = new Account();
@@ -90,5 +89,38 @@ public with sharing class AccountTrigger {
         
     }
 
+    private static Map<Id,Contact> perfomDMlContacts(Map<Id,Contact> dataMap){
+        Integer i = 0;
+        List<Contact> conDeatils = dataMap.values();
+        List<Database.saveResult> results = Database.insert( dataMap.values(),false );
+        for(Database.saveResult result : results){
+        if(!result.isSuccess()){
+            for(Database.Error error : result.getErrors()){
+                    if(error instanceof Database.DuplicateError){
+                        Database.DuplicateError duplicateError = (Database.DuplicateError) error;
+                        Datacloud.DuplicateResult duplicateResult = duplicateError.getDuplicateResult();
+                        List<DataCloud.MatchResult> matchResults = duplicateResult.getMatchResults();
+                        for(DataCloud.MatchResult dmr : matchResults){
+                                DataCloud.MatchResult mr = dmr;
+                                List<DataCloud.MatchRecord> matchRecords = mr.getMatchRecords();
+                                for(DataCloud.MatchRecord matchRecord : matchRecords){
+                                    Contact con = (Contact)matchRecord.getRecord();
+                                    Contact actual = conDeatils[i];
+                                    String name = actual.FirstName+ ' '+actual.LastName;
+                                    if(name == con.Name){
+                                        conDeatils[i].Id = matchRecord.getRecord().Id;
+                                    }
+                                    
+                                }
 
+                        }
+                    }
+                
+            }
+        }
+        i++;
+    }
+      return dataMap;
+    }
+    
 }

@@ -10,4 +10,3 @@
         mode="edit"
         onsubmit="{!c.handleSubmit}" />
 </aura:component>
-  

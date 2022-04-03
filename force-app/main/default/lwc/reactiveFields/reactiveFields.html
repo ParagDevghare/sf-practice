@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Hello">
+        <lightning-button label="Update" slot="actions" onclick={updateName}></lightning-button>
+        <p class="slds-p-horizontal_small">
+            <lightning-input value="" name="firstName" label="First Name" onchange={handleChanges}></lightning-input>
+            <lightning-input value="" name="lastName" label="Last Name" onchange={handleChanges}></lightning-input>
+            Full Name: {fullName}
+        </p>
+        <p slot="footer">
+            <lightning-input value={firstName} name="firstName" date-my-id="firstName" label="Update First Name" ></lightning-input>
+            <lightning-input value={lastName} name="lastName" date-my-id="lastName" label="Update Last Name" ></lightning-input>
+        </p>
+    </lightning-card>
+</template>

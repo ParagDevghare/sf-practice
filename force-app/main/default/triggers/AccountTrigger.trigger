@@ -19,6 +19,6 @@ trigger AccountTrigger on Account (before insert , after insert , after update ,
         AccountTrigger.beforeInsert(Trigger.new);
      }
      if(Trigger.isAfter && Trigger.isInsert){
-         AccountTrigger.afterInsert(Trigger.newMap);
+         AccountTrigger.afterInsertOld(Trigger.newMap);
      }
 }

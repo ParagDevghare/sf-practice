@@ -1,4 +1,3 @@
-
 <aura:component implements="force:lightningQuickAction,lightning:actionOverride">
         
     <p class="slds-p-horizontal_small">
@@ -13,4 +12,4 @@
 
     </lightning:card> -->
 
-</aura:component>	
+</aura:component>
