@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Direct</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND((ISPICKVAL( Type , &quot;Customer - Direct&quot;)), ISCHANGED(Name))</errorConditionFormula>
+    <errorMessage>Can not change Customer-Direct type Account Name</errorMessage>
+</ValidationRule>

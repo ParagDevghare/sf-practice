@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_with_Industry_as_Education_has_been_updated</fullName>
+        <description>Account with Industry as Education has been updated.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>integration@00d2w000001oiioeas.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Public_Facing_General_1592752342504</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Type_To_Customer</fullName>
+        <field>Type</field>
+        <literalValue>Customer</literalValue>
+        <name>Account Type To Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Type_To_Pending</fullName>
+        <field>Type</field>
+        <literalValue>Pending</literalValue>
+        <name>Account Type To Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Type_To_Prospect</fullName>
+        <field>Type</field>
+        <literalValue>Prospect</literalValue>
+        <name>Account Type To Prospect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Active_Acct</fullName>
+        <field>Active__c</field>
+        <literalValue>Yes</literalValue>
+        <name>Active Acct</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>In_Active_Acct</fullName>
+        <field>Active__c</field>
+        <literalValue>No</literalValue>
+        <name>In-Active Acct</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Ownership_To_Public</fullName>
+        <description>On updating Account with Industry as education, Update Ownership To Public.</description>
+        <field>Ownership</field>
+        <literalValue>Public</literalValue>
+        <name>Update Ownership To Public</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Educational Industry</fullName>
+        <actions>
+            <name>Account_with_Industry_as_Education_has_been_updated</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Ownership_To_Public</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>WorkFlow_Task_Assignment</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>When Industry is not blank and is selected to Education.</description>
+        <formula>OR( 
+  ISPICKVAL(Industry, &apos;Education&apos;),
+  (ISPICKVAL(Industry, &apos; &apos;))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>WorkFlow_Task_Assignment</fullName>
+        <assignedTo>paragsf@salesforce.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>This is comment here.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Account.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>WorkFlow_Task_Assignment</subject>
+    </tasks>
+</Workflow>

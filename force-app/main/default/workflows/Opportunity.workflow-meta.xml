@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alerts_on_Opportunities</fullName>
+        <description>Email Alerts on Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>integration@00d2w000001oiioeas.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RB_Robotics_Templates/Finance_Account_Creation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Stage_Awaiting_Approval</fullName>
+        <field>StageName</field>
+        <literalValue>Awaiting Approval</literalValue>
+        <name>Stage Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Closed_Won</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Stage Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Negotiation</fullName>
+        <field>StageName</field>
+        <literalValue>Negotiation/Review</literalValue>
+        <name>Stage Negotiation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

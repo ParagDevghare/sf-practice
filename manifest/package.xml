@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
     <types>
         <members>*</members>
         <name>ApexClass</name>
@@ -32,5 +33,127 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>50.0</version>
+    <types>
+        <members>*</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>Case</members>
+        <members>Contact</members>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>     
+    <types>
+        <members>*</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <!--START: EXPERIENCE BUILDER CHANGES-->
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Portal</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+    <!--END: EXPERIENCE BUILDER CHANGES-->
+        
+    <!-- START: WORKFLOW -->
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
+    </types>  
+    <types>
+        <members>*</members>
+        <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WorkflowOutboundMessage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WorkflowTask</name>
+    </types>
+    <!-- END: WORKFLOW -->
+    <!--
+    *ApexClass    
+    *ApexComponent    
+    *ApexPage    
+    *ApexTestSuite    
+    *ApexTrigger    
+    *AuraDefinitionBundle    
+    *LightningComponentBundle    
+    *StaticResource    
+    *CustomField
+        Account
+        Case
+        Contact 
+    *CustomObject    
+    *CustomSite    
+    *FlexiPage    
+    *Flow  
+    *CustomLabel    
+    *CustomMetadata    
+    *Profile    
+    *GlobalValueSet    
+    START: EXPERIENCE BUILDER CHANGES
+    *Network    
+    *ExperienceBundle    
+    *CustomTab    
+    *Portal    
+    *Document    
+    *Layout 
+    END: EXPERIENCE BUILDER CHANGES
+    -->
+    <version>52.0</version>
 </Package>

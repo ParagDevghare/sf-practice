@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_of_won_deals__c</fullName>
+    <description>SUM of Opportunity Amount having Closed Won Stage.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>SUM of Opportunity Amount having Closed Won Stage.</inlineHelpText>
+    <label>Amount of won deals</label>
+    <summarizedField>Opportunity.Amount</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

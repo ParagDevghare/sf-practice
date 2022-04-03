@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>51.0</apiVersion>
+    <description>This flow will collect the Project details from the user and create new Project Feedback.</description>
+    <dynamicChoiceSets>
+        <name>RatingPicklistChoiseSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Rating__c</picklistField>
+        <picklistObject>Project_Feedback__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>Project Feedback Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project Feedback Screen Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>This element will create new project feedback record based on the values enter by user.</description>
+        <name>Create_new_project_feedback_record</name>
+        <label>Create new project feedback record</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <assignRecordIdToReference>newFeedbackRecord</assignRecordIdToReference>
+        <inputAssignments>
+            <field>Details__c</field>
+            <value>
+                <elementReference>Detail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Need_Exclation__c</field>
+            <value>
+                <elementReference>Required_Escalation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project__c</field>
+            <value>
+                <elementReference>currentProject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rating__c</field>
+            <value>
+                <elementReference>RatingPicklistChoiseSet</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Project_Feedback__c</object>
+    </recordCreates>
+    <screens>
+        <name>Feedback_Screen</name>
+        <label>Feedback Screen</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_new_project_feedback_record</targetReference>
+        </connector>
+        <fields>
+            <name>Feedback_Display_Text</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(31, 29, 182); font-family: verdana;&quot;&gt;Please share any information you have for this project.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Detail</name>
+            <dataType>String</dataType>
+            <fieldText>Detail</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Required_Escalation</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Required Escalation</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Rating</name>
+            <choiceReferences>RatingPicklistChoiseSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Rating</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Feedback_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This variable holds the value of current project for which user is adding the feedback</description>
+        <name>currentProject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>newFeedbackRecord</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

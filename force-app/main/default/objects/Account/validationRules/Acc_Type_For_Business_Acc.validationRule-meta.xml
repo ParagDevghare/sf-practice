@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acc_Type_For_Business_Acc</fullName>
+    <active>false</active>
+    <description>Account Type is required for Bussness</description>
+    <errorConditionFormula>AND (  RecordType.DeveloperName ==&apos;Business_Type&apos;,
+ ISPICKVAL( Type , &apos;&apos;) 
+)</errorConditionFormula>
+    <errorDisplayField>Type</errorDisplayField>
+    <errorMessage>Account Type is required for Bussness</errorMessage>
+</ValidationRule>

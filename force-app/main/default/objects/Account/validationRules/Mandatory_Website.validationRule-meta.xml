@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Website</fullName>
+    <active>false</active>
+    <description>Website is mandatory for saving Account.</description>
+    <errorConditionFormula>AND( Website==null , Website==&apos;&apos;)</errorConditionFormula>
+    <errorMessage>Website is mandatory for saving Account.</errorMessage>
+</ValidationRule>
